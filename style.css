@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  margin-right: 12px;
+  font-family: inherit;
+  border: 1px solid #333;
+}
+
+.green {
+  color: #2fcc71;
+}
+
+.button {
+  color: white;
+  background-color: #444444;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+}
+
+.none {
+  display: none;
+}

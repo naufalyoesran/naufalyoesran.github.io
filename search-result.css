@@ -1,0 +1,91 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.98);
+  padding: 8px;
+}
+
+header > div,
+header form {
+  height: 40px;
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.search-input {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+}
+
+.form svg {
+  position: absolute;
+  right: -6px;
+  top: 7px;
+  border: none;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+p {
+  margin: 0;
+  font-size: 12px;
+}
+
+article {
+  position: relative;
+  padding: 8px;
+  border-bottom: 1px solid rgb(221, 221, 221, 0.5);
+}
+
+header button {
+  background-color: transparent;
+  color: black;
+}
+
+main > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+article button {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+article img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address {
+  margin-bottom: 4px;
+  color: #666;
+}
+
+.price {
+  color: #ffb319;
+  font-size: 20px;
+}

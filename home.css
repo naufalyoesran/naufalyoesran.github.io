@@ -1,0 +1,36 @@
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+}
+
+button {
+  color: #2fcc71;
+  background-color: transparent;
+  border: 1px solid #2fcc71;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #2fcc71;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #0daa50;
+}
+
+button:active {
+  color: #2fcc71;
+  background-color: transparent;
+}
