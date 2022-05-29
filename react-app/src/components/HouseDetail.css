@@ -1,0 +1,189 @@
+.house-detail .head {
+  position: relative;
+  height: 220px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+}
+
+.house-detail .head button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 100%;
+  border: none;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.house-detail .body {
+  margin: 0 15px;
+}
+
+.house-detail .body h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.house-detail .body .room-details {
+  font-size: 12px;
+  display: flex;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.house-detail .body .room-details span {
+  margin-right: 10px;
+}
+
+.house-detail .body .room-owner {
+  align-items: stretch;
+  display: flex;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+
+.house-detail .body .room-owner img {
+  border-radius: 50%;
+  background-color: #333;
+  margin-right: 10px;
+}
+
+.house-detail .body .room-owner .owner-info {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.house-detail .body .room-owner .owner-info h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.house-detail .body .room-owner .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: #2fcc71;
+  border-radius: 100%;
+  color: white;
+  border: none;
+}
+
+.house-detail .body .room-condition {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.house-detail .body h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1;
+  color: #666;
+  font-family: "Heebo", sans-serif;
+  text-transform: uppercase;
+}
+
+.house-detail .body .room-condition p {
+  color: #999;
+  font-size: 12px;
+}
+
+.house-detail .body .room-review-avg {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.house-detail .body .room-review-avg .star-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.house-detail .body .room-review-avg .star-container > span {
+  position: relative;
+  right: -10px;
+  font-family: "Heebo", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.house-detail .body .room-review-avg .star-container > span svg {
+  margin-right: 5px;
+}
+
+.house-detail .body .room-review-avg .star-container div svg {
+  margin-right: 5px;
+}
+
+.modal-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.modal-header {
+  position: relative;
+  background-color: #2fcc71;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #0daa50;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.modal-header > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.modal-open form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.modal-open form textarea {
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.modal-open form button {
+  color: #fff;
+  background-color: #2fcc71;
+  border: 1px solid #0daa50;
+  padding: 10px 15px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-self: flex-end;
+}

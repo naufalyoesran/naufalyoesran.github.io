@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hearted {
+  background-color: rgba(255, 41, 149, 0.5) !important;
+}
+
+.unhearted {
+  background-color: rgba(0, 0, 0, 0.6);
+}
