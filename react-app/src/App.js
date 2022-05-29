@@ -9,24 +9,30 @@ function App() {
 
   const searchHouse = async (term) => {
     const start = Date.now();
-    const housesData = await axios.get("https://dome.vercel.app/api/houses");
-    const usersData = await axios.get("https://dome.vercel.app/api/users");
-    const reviewsData = await axios.get("https://dome.vercel.app/api/reviews");
+    const [housesData, usersData, reviewsData] = await Promise.allSettled([
+      await axios.get("https://dome.vercel.app/api/houses"),
+      await axios.get("https://dome.vercel.app/api/users"),
+      await axios.get("https://dome.vercel.app/api/reviews"),
+    ]);
+
+    // const housesData = await axios.get("https://dome.vercel.app/api/houses");
+    // const usersData = await axios.get("https://dome.vercel.app/api/users");
+    // const reviewsData = await axios.get("https://dome.vercel.app/api/reviews");
 
     let houses = [];
-    for (const houseData of housesData.data) {
+    for (const houseData of housesData.value.data) {
       if (houseData.name.toLowerCase().includes(term.toLowerCase())) {
         let reviewArr = [];
         let userReviewArr = [];
         for (const review of houseData.reviews) {
-          const reviewData = reviewsData.data[review];
+          const reviewData = reviewsData.value.data[review];
           reviewArr.push(reviewData);
-          userReviewArr.push(usersData.data[reviewData.authorId]);
+          userReviewArr.push(usersData.value.data[reviewData.authorId]);
         }
 
         houses.push({
           house: houseData,
-          userData: usersData.data[houseData.ownerId],
+          userData: usersData.value.data[houseData.ownerId],
           reviews: reviewArr,
           usersReview: userReviewArr,
         });
