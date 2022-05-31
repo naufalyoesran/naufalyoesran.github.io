@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Dome.css";
 
-const Dome = ({ searchHouse }) => {
+const Dome = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
   const onFormSubmit = (e) => {
     e.preventDefault();
 
-    searchHouse(searchTerm);
+    navigate(`/search?q=${searchTerm}`);
   };
 
   return (
@@ -19,6 +22,7 @@ const Dome = ({ searchHouse }) => {
           type="text"
           className="search-input"
           placeholder="Find your dream home now..."
+          name="q"
         />
         <button>
           <svg

@@ -1,5 +1,4 @@
 import React from "react";
-import Star from "./icons/Star";
 import "./Review.css";
 
 const Review = ({ user, review }) => {
@@ -7,7 +6,7 @@ const Review = ({ user, review }) => {
   for (let i = 1; i <= 5; i++) {
     if (i <= review.star) {
       generateStar.push(
-        <span style={{ color: "green" }}>
+        <span style={{ color: "#2FCC71" }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -47,7 +46,6 @@ const Review = ({ user, review }) => {
       </span>
     );
   }
-
   return (
     <div className="review">
       <div>

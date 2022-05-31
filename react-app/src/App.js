@@ -1,54 +1,63 @@
-import { useState } from "react";
-import "./App.css";
-import Dome from "./components/Dome";
+import React from "react";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import axios from "axios";
+import Dome from "./components/Dome";
 import SearchResult from "./components/SearchResult";
+import HouseDetail from "./components/HouseDetail";
+import "./App.css";
 
 function App() {
-  const [houses, setHouses] = useState({});
+  const [houses, setHouses] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [time, setTime] = useState(0);
 
-  const searchHouse = async (term) => {
-    const start = Date.now();
-    const [housesData, usersData, reviewsData] = await Promise.allSettled([
-      await axios.get("https://dome.vercel.app/api/houses"),
-      await axios.get("https://dome.vercel.app/api/users"),
-      await axios.get("https://dome.vercel.app/api/reviews"),
-    ]);
+  useEffect(() => {
+    const searchHouse = async () => {
+      const start = Date.now();
 
-    // const housesData = await axios.get("https://dome.vercel.app/api/houses");
-    // const usersData = await axios.get("https://dome.vercel.app/api/users");
-    // const reviewsData = await axios.get("https://dome.vercel.app/api/reviews");
+      const [housesData, usersData, reviewsData] = await Promise.allSettled([
+        await axios.get("https://dome.vercel.app/api/houses"),
+        await axios.get("https://dome.vercel.app/api/users"),
+        await axios.get("https://dome.vercel.app/api/reviews"),
+      ]);
+      setHouses(housesData.value.data);
+      setReviews(reviewsData.value.data);
+      setUsers(usersData.value.data);
 
-    let houses = [];
-    for (const houseData of housesData.value.data) {
-      if (houseData.name.toLowerCase().includes(term.toLowerCase())) {
-        let reviewArr = [];
-        let userReviewArr = [];
-        for (const review of houseData.reviews) {
-          const reviewData = reviewsData.value.data[review];
-          reviewArr.push(reviewData);
-          userReviewArr.push(usersData.value.data[reviewData.authorId]);
-        }
+      const finish = Date.now();
+      const time = finish - start;
+      setTime(time);
+    };
 
-        houses.push({
-          house: houseData,
-          userData: usersData.value.data[houseData.ownerId],
-          reviews: reviewArr,
-          usersReview: userReviewArr,
-        });
-      }
-    }
-    const finish = Date.now();
-    const time = finish - start;
+    searchHouse();
+  }, []);
 
-    setHouses({ houses: houses, term: term, time: time });
-  };
-
-  if (Object.keys(houses).length !== 0) {
-    return <SearchResult searchHouse={searchHouse} houses={houses} />;
-  } else {
-    return <Dome searchHouse={searchHouse} />;
-  }
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dome />}></Route>
+        <Route
+          path="search"
+          element={
+            <SearchResult
+              houses={houses}
+              users={users}
+              reviews={reviews}
+              time={time}
+            />
+          }
+        />
+        <Route
+          path="detail"
+          element={
+            <HouseDetail houses={houses} users={users} reviews={reviews} />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
