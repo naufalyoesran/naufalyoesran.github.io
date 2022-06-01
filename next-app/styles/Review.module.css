@@ -1,0 +1,52 @@
+.review {
+  margin-top: 20px;
+}
+
+.review > div {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.review > div img {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.review > div > {
+  flex: 1;
+  font-size: 14px;
+}
+
+.review .reviewAuthor {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.review .reviewAuthor strong {
+  color: #444;
+  font-family: "Heebo", sans-serif;
+}
+
+.review .reviewAuthor span {
+  color: #999;
+  font-size: 12px;
+}
+
+.review > div > div p {
+  font-size: 13px;
+  color: #666;
+}
+
+.review > div > div > p:first-of-type {
+  color: #999;
+  font-size: 12px;
+  margin: 0;
+}
+
+.starContainer svg {
+  margin-right: 5px;
+}

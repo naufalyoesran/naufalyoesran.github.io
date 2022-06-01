@@ -1,0 +1,197 @@
+.houseDetail .head {
+  position: relative;
+  height: 220px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+}
+
+.houseDetail .head button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 100%;
+  border: none;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.houseDetail .body {
+  margin: 0 15px;
+}
+
+.houseDetail .body h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.houseDetail .body .roomDetails {
+  font-size: 12px;
+  display: flex;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.houseDetail .body .roomDetails span {
+  margin-right: 10px;
+}
+
+.houseDetail .body .roomOwner {
+  align-items: stretch;
+  display: flex;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+
+.houseDetail .body .roomOwner img {
+  border-radius: 50%;
+  background-color: #333;
+  margin-right: 10px;
+}
+
+.houseDetail .body .roomOwner .ownerInfo {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.houseDetail .body .roomOwner .ownerInfo h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.houseDetail .body .roomOwner .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: #2fcc71;
+  border-radius: 100%;
+  color: white;
+  border: none;
+}
+
+.houseDetail .body .roomCondition {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.houseDetail .body h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1;
+  color: #666;
+  font-family: "Heebo", sans-serif;
+  text-transform: uppercase;
+}
+
+.houseDetail .body .roomCondition p {
+  color: #999;
+  font-size: 12px;
+}
+
+.houseDetail .body .roomReviewAvg {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.houseDetail .body .roomReviewAvg .starContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.houseDetail .body .roomReviewAvg .starContainer > span {
+  position: relative;
+  right: -10px;
+  font-family: "Heebo", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.houseDetail .body .roomReviewAvg .starContainer > span svg {
+  margin-right: 5px;
+}
+
+.houseDetail .body .roomReviewAvg .starContainer div svg {
+  margin-right: 5px;
+}
+
+.modalOpen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.modalHeader {
+  position: relative;
+  background-color: #2fcc71;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #0daa50;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.modalHeader > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.modalOpen form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.modalOpen form textarea {
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.modalOpen form button {
+  color: #fff;
+  background-color: #2fcc71;
+  border: 1px solid #0daa50;
+  padding: 10px 15px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.hearted {
+  background-color: rgba(255, 41, 149, 0.5) !important;
+}
+
+.unhearted {
+  background-color: rgba(0, 0, 0, 0.6);
+}
