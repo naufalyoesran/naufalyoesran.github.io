@@ -43,3 +43,92 @@
   right: 20px;
   top: 10px;
 }
+
+.filterContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid #ddd;
+  box-shadow: 0px 3px 5px rgb(0 0 0 / 20%);
+}
+
+.rating {
+  color: #444;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sort {
+  color: #444;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ratingOpen {
+  position: absolute;
+  border: 1px solid #ddd;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.rateStar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.check {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+
+.check.checked {
+  border-color: #2fcc71;
+  background-color: #2fcc71;
+}
+
+.starContainer {
+  display: flex;
+}
+
+.starContainer > svg {
+  margin-right: 10px;
+}
+
+.sortOpen {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.sortItem {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.sortItem.selected {
+  background-color: #2fcc71;
+  color: #fff;
+}

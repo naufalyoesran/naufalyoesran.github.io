@@ -8,6 +8,10 @@
   position: relative;
 }
 
+.house:last-of-type {
+  margin-bottom: 60px;
+}
+
 .house button {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;

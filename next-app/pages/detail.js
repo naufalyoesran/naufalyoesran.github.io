@@ -4,7 +4,7 @@ import Review from "../components/Review";
 import StarGenerator from "../components/StarGenerator";
 import styles from "../styles/Detail.module.css";
 
-export default function HouseDetail({ house, owner, reviews, users }) {
+export default function HouseDetail({ house, owner, reviews, avg, users }) {
   const router = useRouter();
   const [isModalOpen, setModalOpen] = useState(false);
   const [textAreaModal, setTextAreaModal] = useState("");
@@ -174,7 +174,7 @@ export default function HouseDetail({ house, owner, reviews, users }) {
           <div className={styles.starContainer}>
             <div>
               <StarGenerator
-                reviews={reviews}
+                avgReview={avg}
                 svg={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +216,13 @@ export default function HouseDetail({ house, owner, reviews, users }) {
           </div>
         </div>
         {reviews.map((review) => {
-          return <Review review={review} user={users[review.authorId]} />;
+          return (
+            <Review
+              review={review}
+              user={users[review.authorId]}
+              key={review.id}
+            />
+          );
         })}
       </div>
 
@@ -245,11 +251,18 @@ export const getServerSideProps = async (context) => {
     reviews.push(data);
   }
 
+  let avg = 0;
+  for (const review of reviews) {
+    avg += review.star;
+  }
+  avg = Math.round(avg / reviews.length);
+
   return {
     props: {
       house,
       owner,
       reviews,
+      avg,
       users,
     },
   };
